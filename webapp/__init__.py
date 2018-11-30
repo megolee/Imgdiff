@@ -9,3 +9,6 @@ app = Flask(__name__)
 # api.add_resource(ImageDiffApi, '/api/imagediff')
 app.config.from_object('webapp.config.config.DevConfig')
 from webapp.indexs import image_index
+app.config['SECRET_KEY'] = 'super secret key'
+
+from webapp import indexs
