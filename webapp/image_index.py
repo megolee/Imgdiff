@@ -8,7 +8,8 @@ from webapp import app
 from webapp.cmds.imgdiff import ImageDiff
 
 
-@app.route('/diff', methods=['POST', 'GET'])
+@app.route('/', methods=['POST', 'GET'])
+@app.route('/index', methods=['POST', 'GET'])
 def image_diff():
     if request.method == 'GET':
         return render_template('imgdiff.html')
