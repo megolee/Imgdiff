@@ -3,4 +3,4 @@
 from flask import Flask
 app = Flask(__name__)
 app.config.from_object('webapp.config.config.DevConfig')
-from webapp import image_index
+from webapp.indexs import image_index

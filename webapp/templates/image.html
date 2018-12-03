@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <style>
+    #imgdiv{
+        margin: auto;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%,0);
+    }
     img{
         max-width:1200px;
         width:expression_r(this.width > 1200 ? "600px" : this.width);
@@ -12,6 +18,8 @@
     <title>Title</title>
 </head>
 <body>
+<div id="imgdiv">
     <img src="data:image/png;base64,{{ image }}">
+</div>
 </body>
 </html>

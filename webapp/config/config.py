@@ -9,4 +9,5 @@ class Config(object):
 
 
 class DevConfig(Config):
+    ENV = 'development'
     DEBUG = True
