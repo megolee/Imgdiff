@@ -5,7 +5,7 @@ from io import BytesIO
 
 from flask import render_template, request, send_file
 from webapp import app
-from webapp.cmds.imgdiff import ImageDiff
+from webapp.img.imgdiff import ImageDiff
 
 
 @app.route('/', methods=['POST', 'GET'])
