@@ -4,6 +4,7 @@ from PIL import Image, ImageColor, ImageChops
 
 
 class ImageDiff(object):
+
     _imageA = None
 
     _imageB = None
