@@ -3,11 +3,11 @@
     <el-row type="flex" justify="center">
       <el-col class="label_input">
         <el-form-item label="活动名称">
-          <el-input v-model="form.name"></el-input>
+          <el-input v-model="form.name" ref="image1Input" :disabled="true"></el-input>
         </el-form-item>
       </el-col>
       <el-col>
-          <el-upload action="" :show-file-list="false" :auto-upload="false">
+          <el-upload action="" :show-file-list="false" :auto-upload="false" :on-change="changeImage1Handle" accept="image/png,image/jpeg">
             <el-button type="primary">选择文件</el-button>
           </el-upload>
       </el-col>
@@ -15,11 +15,11 @@
     <el-row type="flex" justify="center">
       <el-col class="label_input">
         <el-form-item label="活动名称">
-          <el-input v-model="form.name"></el-input>
+          <el-input v-model="form.name" ref="image2Input" :disabled="true"></el-input>
         </el-form-item>
       </el-col>
       <el-col>
-          <el-upload action="" :show-file-list="false" :auto-upload="false">
+          <el-upload action="" :show-file-list="false" :auto-upload="false" :on-change="changeImage2Handle" accept="image/png,image/jpeg">
             <el-button type="primary">选择文件</el-button>
           </el-upload>
       </el-col>
@@ -47,6 +47,24 @@ export default {
   methods: {
     onSubmit () {
       console.log('Message')
+    },
+    changeImage1Handle (file, fileList) {
+      console.log(file.name)
+      if (fileList.length !== 1) {
+        fileList.shift()
+      }
+      this.$refs.image1Input.value = file.name
+      console.log(fileList.length)
+      console.log(fileList[0].name)
+    },
+    changeImage2Handle (file, fileList) {
+      console.log(file.name)
+      if (fileList.length !== 1) {
+        fileList.shift()
+      }
+      this.$refs.image2Input.value = file.name
+      console.log(fileList.length)
+      console.log(fileList[0].name)
     }
   }
 }
