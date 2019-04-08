@@ -15,6 +15,7 @@ def image_diff():
     if request.method == 'GET':
         return render_template('imgdiff.html')
     else:
+        print(request.files)
         img1 = request.files['img1']
         img2 = request.files['img2']
         try:
