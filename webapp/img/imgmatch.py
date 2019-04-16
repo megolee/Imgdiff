@@ -5,6 +5,7 @@ import cv2
 import numpy
 from PIL import Image
 
+
 class ImageMatch(object):
 
     _image_src = None
@@ -28,12 +29,3 @@ class ImageMatch(object):
         bottom_right = (top_left[0] + width, top_left[1] + height)
         cv2.rectangle(self._image_src, top_left, bottom_right, (244, 59, 255), 2)
         return Image.fromarray(numpy.uint8(self._image_src))
-
-
-if __name__ == '__main__':
-
-    img = ImageMatch('/Users/megolees/Downloads/Match1.png','/Users/megolees/Downloads/Match2.png')
-    img = img.match_image()
-    cv2.imshow('Img', img)
-    cv2.waitKey(0)
-    cv2.destoryAllWindows()
